@@ -17,15 +17,14 @@
 
 
 </p><br/>
-<h3>ARQUITETURA</h3><br>
-<p>DDD <b>((Domain-Driven Design)</b></p><br>
+<br>
 <h3>TECNOLOGIA USADA</h3>
 <p>
  :hearts: Linguagem C#<br/>
  :hearts: Framework .NET CORE 6 MVC.<br/>
  :hearts: Banco de dados Sql Server.<br>
  :hearts: Jquery.<br>
- :hearts: Bootstrap 5.<br>
+ :hearts: Bootstrap 5, HTML 05 e CSS3<br>
  </p><br>
 <h3>REGRAS DE NEGOCIO</h3>
 <br>
