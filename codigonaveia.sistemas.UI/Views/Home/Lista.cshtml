@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Lista";
+}
+
+<div class="Ccontainer">
+    <h1> Carregar DropDowLinst com outro DropDowLinst</h1>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+            <select class="form-select" asp-items="ViewBag.Estado" id="Estado">
+                <option selected value="0">--SELECIONE O ESTADO--</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-select" id="Cidade" style="display:none">
+                <option selected value="0">-</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#Estado").change(function () {
+                $("#Cidade").show();
+                var cidadeId = $(this).val();
+                var Url = "/Home/ObterCidadePorId";
+                debugger;
+                $.ajax({
+                    url: Url,
+                    data: { Id: cidadeId },
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#Cidade").empty();
+                        $("#Cidade").append('<option value> Selecione </option>');
+                        $.each(data, function (index, element) {
+                            $("#Cidade").append('<option value="' + element.valeu + '">' + element.text + '</option>');
+                        });
+                      
+                    }
+                            
+                });
+
+            });
+        });
+    </script>
+}
+

@@ -22,6 +22,12 @@ namespace codigonaveia.sistemas.UI.Controllers
             ViewBag.Estado = new SelectList(resultado, "Id", "EstadoNome");
             return View();
         }
+        public IActionResult Lista()
+        {
+            var resultado = _servicesRepository.ObterEstados().ToList();
+            ViewBag.Estado = new SelectList(resultado, "Id", "EstadoNome");
+            return View();
+        }
         public JsonResult ObterCidadePorId(int Id)
         {
             var resultado = new SelectList(_servicesRepository.ObterCidadesPorId(Id),"Id","CidadeNome").ToList();
